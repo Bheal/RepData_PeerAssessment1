@@ -24,8 +24,9 @@ list.files()
 ```
 
 ```
-## [1] "activity.csv"              "PA1_template.Rmd"         
-## [3] "repdata_data_activity.zip"
+## [1] "activity.csv"              "PA1_template.html"        
+## [3] "PA1_template.md"           "PA1_template.Rmd"         
+## [5] "PA1_template_files"        "repdata_data_activity.zip"
 ```
 
 
@@ -39,8 +40,9 @@ list.files()
 ```
 
 ```
-## [1] "activity.csv"              "PA1_template.Rmd"         
-## [3] "repdata_data_activity.zip"
+## [1] "activity.csv"              "PA1_template.html"        
+## [3] "PA1_template.md"           "PA1_template.Rmd"         
+## [5] "PA1_template_files"        "repdata_data_activity.zip"
 ```
 
 
@@ -49,7 +51,7 @@ list.files()
 
 
 There is one new file, "activity.csv" unziped from the downloaded zip file.
-### I.Loading and preprocessing the data
+### I. Loading and preprocessing the data
 
 
 ```r
@@ -93,6 +95,7 @@ library(reshape2)
 
 ```r
 library(knitr)
+
 head(activity)
 ```
 
@@ -130,7 +133,7 @@ str(activity)
 ##  $ date    : Factor w/ 61 levels "2012-10-01","2012-10-02",..: 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ interval: int  0 5 10 15 20 25 30 35 40 45 ...
 ```
-Load the data file as activity, and each variable steps, date, interval is in its own column.
+###  Answer I.  Load the data file as activity, and each variable steps, date, interval is in its own column.
 
 
 
@@ -169,8 +172,7 @@ Load the data file as activity, and each variable steps, date, interval is in it
 ## 1           9354.23            10395
 ```
 
-#### Answer
-In in the output above, we can see the histogram of total number of steps taken each day.  And second table gives us the average and median steps per day, if we ignore the NA's.
+### Answer II. In in the output above, we can see the histogram of total number of steps taken each day.  And second table gives us the average and median steps per day, if we ignore the NA's.
 
 
 
@@ -179,7 +181,7 @@ In in the output above, we can see the histogram of total number of steps taken 
 
 
 
-
+ 
 
 
 ### III. What is the average daily activity pattern?
@@ -212,7 +214,7 @@ abline(v=104, col= "red")
 
 ![](PA1_template_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 
-#### Answers:  The 8:35 AM interval on average contains the maximum number of steps. From the above graph and computation, the maxima of average steps is 206.17 during the 8:35 AM interval which is the 104th ordered interval.
+### Answers III. The 8:35 AM interval on average contains the maximum number of steps. From the above graph and computation, the maxima of average steps is 206.17 during the 8:35 AM interval which is the 104th ordered interval.
 
 
 
@@ -429,74 +431,74 @@ abline(v=104, col= "red")
 #  note: using -Standard Base R evaluations- below and get a histogram of total steps and mean and median:
 
 second.total.steps <- aggregate(activity.new[4], activity.new[2], sum)
-kable(second.total.steps)
+kable(second.total.steps, format = "markdown")
 ```
 
 
 
-date          steps.fixed
------------  ------------
-2012-10-01       10766.19
-2012-10-02         126.00
-2012-10-03       11352.00
-2012-10-04       12116.00
-2012-10-05       13294.00
-2012-10-06       15420.00
-2012-10-07       11015.00
-2012-10-08       10766.19
-2012-10-09       12811.00
-2012-10-10        9900.00
-2012-10-11       10304.00
-2012-10-12       17382.00
-2012-10-13       12426.00
-2012-10-14       15098.00
-2012-10-15       10139.00
-2012-10-16       15084.00
-2012-10-17       13452.00
-2012-10-18       10056.00
-2012-10-19       11829.00
-2012-10-20       10395.00
-2012-10-21        8821.00
-2012-10-22       13460.00
-2012-10-23        8918.00
-2012-10-24        8355.00
-2012-10-25        2492.00
-2012-10-26        6778.00
-2012-10-27       10119.00
-2012-10-28       11458.00
-2012-10-29        5018.00
-2012-10-30        9819.00
-2012-10-31       15414.00
-2012-11-01       10766.19
-2012-11-02       10600.00
-2012-11-03       10571.00
-2012-11-04       10766.19
-2012-11-05       10439.00
-2012-11-06        8334.00
-2012-11-07       12883.00
-2012-11-08        3219.00
-2012-11-09       10766.19
-2012-11-10       10766.19
-2012-11-11       12608.00
-2012-11-12       10765.00
-2012-11-13        7336.00
-2012-11-14       10766.19
-2012-11-15          41.00
-2012-11-16        5441.00
-2012-11-17       14339.00
-2012-11-18       15110.00
-2012-11-19        8841.00
-2012-11-20        4472.00
-2012-11-21       12787.00
-2012-11-22       20427.00
-2012-11-23       21194.00
-2012-11-24       14478.00
-2012-11-25       11834.00
-2012-11-26       11162.00
-2012-11-27       13646.00
-2012-11-28       10183.00
-2012-11-29        7047.00
-2012-11-30       10766.19
+|date       | steps.fixed|
+|:----------|-----------:|
+|2012-10-01 |    10766.19|
+|2012-10-02 |      126.00|
+|2012-10-03 |    11352.00|
+|2012-10-04 |    12116.00|
+|2012-10-05 |    13294.00|
+|2012-10-06 |    15420.00|
+|2012-10-07 |    11015.00|
+|2012-10-08 |    10766.19|
+|2012-10-09 |    12811.00|
+|2012-10-10 |     9900.00|
+|2012-10-11 |    10304.00|
+|2012-10-12 |    17382.00|
+|2012-10-13 |    12426.00|
+|2012-10-14 |    15098.00|
+|2012-10-15 |    10139.00|
+|2012-10-16 |    15084.00|
+|2012-10-17 |    13452.00|
+|2012-10-18 |    10056.00|
+|2012-10-19 |    11829.00|
+|2012-10-20 |    10395.00|
+|2012-10-21 |     8821.00|
+|2012-10-22 |    13460.00|
+|2012-10-23 |     8918.00|
+|2012-10-24 |     8355.00|
+|2012-10-25 |     2492.00|
+|2012-10-26 |     6778.00|
+|2012-10-27 |    10119.00|
+|2012-10-28 |    11458.00|
+|2012-10-29 |     5018.00|
+|2012-10-30 |     9819.00|
+|2012-10-31 |    15414.00|
+|2012-11-01 |    10766.19|
+|2012-11-02 |    10600.00|
+|2012-11-03 |    10571.00|
+|2012-11-04 |    10766.19|
+|2012-11-05 |    10439.00|
+|2012-11-06 |     8334.00|
+|2012-11-07 |    12883.00|
+|2012-11-08 |     3219.00|
+|2012-11-09 |    10766.19|
+|2012-11-10 |    10766.19|
+|2012-11-11 |    12608.00|
+|2012-11-12 |    10765.00|
+|2012-11-13 |     7336.00|
+|2012-11-14 |    10766.19|
+|2012-11-15 |       41.00|
+|2012-11-16 |     5441.00|
+|2012-11-17 |    14339.00|
+|2012-11-18 |    15110.00|
+|2012-11-19 |     8841.00|
+|2012-11-20 |     4472.00|
+|2012-11-21 |    12787.00|
+|2012-11-22 |    20427.00|
+|2012-11-23 |    21194.00|
+|2012-11-24 |    14478.00|
+|2012-11-25 |    11834.00|
+|2012-11-26 |    11162.00|
+|2012-11-27 |    13646.00|
+|2012-11-28 |    10183.00|
+|2012-11-29 |     7047.00|
+|2012-11-30 |    10766.19|
 
 ```r
 summary(second.total.steps)
@@ -524,8 +526,7 @@ text(x = 72, y = median(second.total.steps$steps), label = "median")
 ![](PA1_template_files/figure-html/unnamed-chunk-7-2.png)<!-- -->
 
 
-#### Answers:
-There were 2304 NA's in the 'step' column.  I use the mean over 5-minute interval values to fill in the missing values and created a new dataset `activity.new`. 
+### Answer IV. There were 2304 NA's in the 'step' column.  I use the mean over 5-minute interval values to fill in the missing values and created a new dataset `activity.new`. 
 
 Next the I calculated the mean and median, both are 10766 steps per day. I chech this by making a data frame of total steps per day in new data frame, stored as 'second.total.steps'.  This time I use the aggregate() to split the steps by date and calculate the total steps, these results are stored as a data frame in `second.total.steps`.  If we sum the daily total steps, the sum equals 656737.5 and divide this by 61 day in the dataset and we verify the average of 10766.19.  The median is also correct and one could use the `sort(second.total.steps$steps.fixed)[31]` to verify that.
 
@@ -538,7 +539,7 @@ Next the I calculated the mean and median, both are 10766 steps per day. I chech
 
 
 
-###V.  Are there differences in activity patterns between weekdays and weekends?
+### V.  Are there differences in activity patterns between weekdays and weekends?
 
 For this part the weekdays() function may be of some help here. Use the dataset with the filled-in missing values for this part.
 
@@ -564,6 +565,4 @@ For this part the weekdays() function may be of some help here. Use the dataset 
 
 ![](PA1_template_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
 
-#### Answer:
-To create the new factor variable used, weekdays() and as.Date() to add a new columns to 'activity.new' call it 'day'.
-    - Then create the panel plot.
+### Answer V. To create the new factor variable used, weekdays() and as.Date() to add a new columns to 'activity.new' call it 'day'. Then create the panel plot.
