@@ -4,7 +4,7 @@ January 8, 2017
 
 
 
-
+### The Homework project had 5 parts.  I have labeled each roman numerals I - V and followed the question with an Answer explain my finding. 
 
 ```r
 setwd("C:\\Users\\avtarsingh\\Downloads\\jhu\\c5")
@@ -526,9 +526,7 @@ text(x = 72, y = median(second.total.steps$steps), label = "median")
 ![](PA1_template_files/figure-html/unnamed-chunk-7-2.png)<!-- -->
 
 
-### Answer IV. There were 2304 NA's in the 'step' column.  I use the mean over 5-minute interval values to fill in the missing values and created a new dataset `activity.new`. 
-
-Next the I calculated the mean and median, both are 10766 steps per day. I chech this by making a data frame of total steps per day in new data frame, stored as 'second.total.steps'.  This time I use the aggregate() to split the steps by date and calculate the total steps, these results are stored as a data frame in `second.total.steps`.  If we sum the daily total steps, the sum equals 656737.5 and divide this by 61 day in the dataset and we verify the average of 10766.19.  The median is also correct and one could use the `sort(second.total.steps$steps.fixed)[31]` to verify that.
+### Answer IV. There were 2304 NA's in the 'step' column.  I use the mean over 5-minute interval values to fill in the missing values and created a new dataset `activity.new`. Next, I calculated the mean and median, both are 10766 steps per day. Suspicious of this coincidence, I chech the findings by making a data frame of total steps per day in new data frame, stored as `second.total.steps` and shown in the table format.  This time I use the aggregate() to split the steps by date and calculate the total steps, these results are stored as a data frame in `second.total.steps`.  If we sum the daily total steps, the sum equals 656737.5 and divide this by 61 day in the dataset and we verify the average of 10766.19.  The median is also correct and one could use the `sort(second.total.steps$steps.fixed)[31]` to verify that.
 
 
 
